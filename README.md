@@ -1,18 +1,17 @@
 This is a README for Python image resizer
 
 
- IMAGE RESIZER PYTHON 2.7
+ IMAGE RESIZER PYTHON ver 2.7
  
-(a) Create a directory called CreateThumbnail and put the CreateThumbnail.py file in it
+ To Create the ZIP for the CreateThumbnail Lambda function and its handler -
  
-(b) use the command "pip install Pillow -t CreateThumbnail" so pip would install the Pillow library directly into that directory (you don't need the boto3 library as new_sel_auto_2019-09-02-18-10-36-820@icrossing.com" 
-Lambda already have it)
+1) At the root of the project execute - "cd CreateThumbnail && zip -r9 CreateThumbnail.zip ." - which means, change into the new directory and zip all files and folders recursively.
 
-(c) "cd CreateThumbnail && zip -r9 CreateThumbnail.zip ." - which means, change into the new directory and zip all files and folders recursively.
+(2) Make sure your running environment is actually Python2.7
 
-(d) Update the function using the AWS CLI - "aws lambda update-function-code --function-name CreateThumbnail --zip-file fileb://CreateThumbnail.zip"
+ 
+If you want to make any changes to the Python script then edit the file ///CreateThumbnail/CreateThumbnail.py
 
-(e) Make sure your running environment is actually Python2.7
-
-Run your test again. Make sure you change the arn for the bucket to reflect your bucketName so the output is placed in the correct place. It should work.
+Rebuild the ZIp using the above command from the root "cd CreateThumbnail && zip -r9 CreateThumbnail.zip ."
+Deploy the generated ZIP to AWS Lambda and test
 
